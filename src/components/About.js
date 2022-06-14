@@ -1,14 +1,13 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+// import { Helmet } from 'react-helmet';
 
 export default function About(props) {
   return (
     <>
-    <Helmet>
+    {/* <Helmet>
         <title>TextUtils | About</title>
-      </Helmet>
+      </Helmet> */}
     
-      {/* #042743 */}
 
 
   <div className="px-4 py-3 my-2 " style={{ color: props.mode === "dark" ? "white" : "#042743" }}>
