@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+// import { Link } from "react-router-dom";
 // import {Link} from 'react-router-dom';
 
 export default function Navbar(props) {
@@ -12,6 +13,9 @@ export default function Navbar(props) {
         <a className="navbar-brand" href="#">
           {props.title}
         </a>
+        {/* <Link className="navbar-brand" to="/">
+          {props.title}
+        </Link> */}
         <button
           className="navbar-toggler"
           type="button"
@@ -29,11 +33,14 @@ export default function Navbar(props) {
               <a className="nav-link"  href="#">
                 Home
               </a>
+              {/* <Link className="nav-link"  to="/">
+                Home
+              </Link> */}
             </li>
             {/* <li className="nav-item">
-              <a className="nav-link" href="/about">
+              <Link className="nav-link" to="/about">
                 {props.aboutText}
-              </a>
+              </Link>
             </li> */}
           </ul>
         <div

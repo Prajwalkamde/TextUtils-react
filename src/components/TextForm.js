@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 export default function TextForm(props) {
   const handleUpClick = () => {
@@ -65,55 +65,61 @@ export default function TextForm(props) {
 
   return (
     <>
-    {/* <Helmet>
+    <Helmet>
         <title>TextUtils | Home</title>
-      </Helmet> */}
+      </Helmet>
       <div
         className="container"
-        style={{ color: props.mode === "dark" ? "white" : "#042743" }}
+        style={{ color: props.mode === "dark" ? "white" : "#193755" }}
       >
         <h3 className="my-3">{props.heading}</h3>
         <div className="mb-2">
           <textarea
+            placeholder="Type something to analyze..."
             className="form-control"
             value={text}
             onChange={handleOnChange}
             style={{
-              backgroundColor: props.mode === "dark" ? "grey" : "white",
-              color: props.mode === "dark" ? "white" : "#042743",
+              backgroundColor: props.mode === "dark" ? "#193755" : "white",
+              color: props.mode === "dark" ? "white" : "#193755",
             }}
             id="myBox"
             rows="8"
           ></textarea>
 
-          <button className="btn btn-success my-3 mx-1" onClick={handleUpClick}>
+          <button disabled={text.length===0} className="btn btn-success my-3 mx-1" onClick={handleUpClick}>
             Change to Uppercase
           </button>
           <button
+          disabled={text.length===0}
             className="btn btn-success my-3 mx-1"
             onClick={handleLowClick}
           >
             Change to Lowercase
           </button>
           <button
+          disabled={text.length===0}
             onClick={handleSpeakClick}
             className="btn btn-success my-3 mx-1"
           >
             Speak Text
           </button>
           <button
+          disabled={text.length===0}
             className="btn btn-success my-3 mx-1"
             onClick={handleClrClick}
           >
             Clear Text
           </button>
           <button
+          disabled={text.length===0}
             className="btn btn-success my-3 mx-1"
             onClick={handleTitleCase}
           >
             Capitalize Text
           </button>
           <button
+          disabled={text.length===0}
             className="btn btn-success my-3 mx-1"
             onClick={handleExtraSpaces}
           >
@@ -132,7 +138,7 @@ export default function TextForm(props) {
           Words - { text.length>0 ? text.trim().split(" ").length : 0}, Characters -{text.length}
           {/* text.length>0 ? text.trim().split(" ").length : 0 */}
         </p>
-        <p>Time to read the text - {0.008 * text.split(" ").length} Minutes</p>
+        <p>Time to read the text - {0.008 * text.split(" ").filter((element) =>{return element.length !== 0}).length} Minutes</p>
        
       </div>
     </>
