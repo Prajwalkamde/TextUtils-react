@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Helmet } from 'react-helmet';
+// import { Helmet } from 'react-helmet';
 
 export default function TextForm(props) {
   const handleUpClick = () => {
@@ -35,6 +35,8 @@ export default function TextForm(props) {
       return newText;
     });
     setText(newText.join(" "));   
+    props.showAlert("Text has been capitalized", "success")
+
   };
 
   const handleExtraSpaces = () => {
@@ -65,9 +67,9 @@ export default function TextForm(props) {
 
   return (
     <>
-    <Helmet>
+    {/* <Helmet>
         <title>TextUtils | Home</title>
-      </Helmet>
+      </Helmet> */}
       <div
         className="container"
         style={{ color: props.mode === "dark" ? "white" : "#193755" }}
